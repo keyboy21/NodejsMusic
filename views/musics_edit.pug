@@ -1,0 +1,16 @@
+extends layout
+
+block content 
+    h1.mb-5 #{title}
+    form(method="POST", action="/music/edit/"+ music._id)
+        .form-group
+            label(for='name') Musiqani nomini yozing
+            input#name.form-control(type='text', name="name", aria-describedby='emailHelp', value=music.name)
+        //- .form-group
+        //-     label(for='singer') Ijrochi
+        //-     input#singer.form-control(type='text', name="singer", value=music.singer)
+        .form-group
+            label(for='izoh') Izoh
+            input(name="comment", value=music.comment)#izoh.form-control
+    
+        button.btn.btn-warning(type='submit') O'zgartirish

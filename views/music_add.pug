@@ -1,0 +1,16 @@
+extends layout
+
+block content 
+    h1.mb-5 #{title}
+    form(method="POST", action="/music/add")
+        .form-group
+            label(for='name') Musiqani Ismi
+            input#name.form-control(type='text', name="name", aria-describedby='emailHelp')
+        //- .form-group
+        //-     label(for='singer') Ijrochi
+        //-     input#singer.form-control(type='text', name="singer")
+        .form-group
+            label(for='izoh') Izoh
+            textarea(name="comment", cols="30", rows="10")#izoh.form-control
+    
+        button.btn.btn-success(type='submit') Jo'natish

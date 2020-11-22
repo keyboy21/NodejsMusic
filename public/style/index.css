@@ -1,0 +1,17 @@
+.alert-error{
+    color: white;
+    background: rgb(251, 134, 0);
+}
+.alert-success_msg{
+    color: white;
+    background: rgb(10, 233, 233);
+}
+
+.navbar{
+    background-color: #28A7EB !important;
+}
+
+.container .mb-5{
+    margin-top: 35px;
+    text-align:center !important ;
+}

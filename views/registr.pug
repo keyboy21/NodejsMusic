@@ -1,0 +1,22 @@
+extends layout
+
+block content 
+    h1.mb-5 #{title}
+    form(method="POST", action="/registr")
+        .form-group
+            label(for='name') Ismi
+            input#name.form-control(type='text', name="name", aria-describedby='emailHelp')
+        .form-group
+            label(for='singer') Email
+            input#singer.form-control(type='text', name="email")
+        .form-group
+            label(for='izoh2') Foydalunuvchi laqabi
+            input#izoh2.form-control(type='text', name="username")
+        .form-group
+            label(for='izoh') Parol kiriting
+            input#singer.form-control(type='password', name="password")
+        .form-group
+            label(for='izoh') Parol qaytatan kiriting
+            input#singer.form-control(type='password', name="password2")
+    
+        button.btn.btn-success(type='submit') Ro'yhatan o'tamiz

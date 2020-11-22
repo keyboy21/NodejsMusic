@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        link(rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css' integrity='sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk' crossorigin='anonymous')
+        link(rel="stylesheet", href="/style/index.css")
+        title #{title}
+    body
+    
+    nav.navbar.navbar-expand-lg.navbar-light.bg-success
+      a.navbar-brand(href='/') Musisc Ection
+      button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarSupportedContent', aria-controls='navbarSupportedContent', aria-expanded='false', aria-label='Toggle navigation')
+          span.navbar-toggler-icon
+      #navbarSupportedContent.collapse.navbar-collapse
+          ul.navbar-nav.mr-auto
+            li.nav-item
+              a.nav-link(href='/') Bosh sahifa
+            if user  
+              li.nav-item
+                a.nav-link(href='/music/add') Musiqa qo'shish
+            
+      form.form-inline.my-2.my-lg-0
+            input.form-control.mr-sm-2(type='search', placeholder='Qidirish', aria-label='Search')
+            button.btn.btn-warning.my-2.my-sm-0(type='submit') Search
+      ul.navbar-nav.nav.nav-right
+        if user
+          li.nav-item
+            a.nav-link(href='/logout') Tizimdan chiqish  
+        else      
+          li.nav-item
+            a.nav-link(href='/registr') Ro'hatan o'tish    
+          li.nav-item
+            a.nav-link(href='/login') Tizimga kirish   
+    .container
+        != messages('message', locals)
+        if errors 
+          each error, i in errors
+            div(class="alert alert-danger") #{error.msg}
+        block content
+        hr
+        footer
+            p Xizmatlar litsenziyalangan &copy; 2020
+    script(src='https://code.jquery.com/jquery-3.5.1.slim.min.js', integrity='sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj', crossorigin='anonymous')
+    script(src='https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js', integrity='sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo', crossorigin='anonymous')
+    script(src='https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js', integrity='sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI', crossorigin='anonymous')
+    script(src="/javascript/index.js")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js")
